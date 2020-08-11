@@ -1,0 +1,36 @@
+<!--<p>bar works!</p>-->
+<div class="bar-container">
+	<h2>World bars and pubs</h2>
+	<div id="search">
+		
+		<a [routerLink]="['/search']">SEARCH BARS</a>
+	</div>
+	<!-- <ul>
+		<li *ngFor="let search of pubs">
+				<h1>Name:{{ search.name }}</h1>
+				<h2>city:{{ search.city }}</h2>
+				<h2>type:{{ search.type }}</h2>
+		</li>
+	</ul> -->
+
+	<ul>
+		 <li *ngFor="let bar of bars" class="bars">
+			<a [routerLink]="['/detail',bar._id]">		
+				
+				<div class="bar-image">
+				<img src="{{url+'/get-image/'+bar.image }}" *ngIf="bar.image">
+				</div>
+				<h5>{{ bar.name }}</h5>
+
+				
+			</a>
+		</li> 
+
+	</ul>
+	
+	<br/>
+	
+	
+</div>
+
+

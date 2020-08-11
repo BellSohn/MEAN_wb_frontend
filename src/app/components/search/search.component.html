@@ -1,0 +1,36 @@
+<!--<p>search works!</p>-->
+<div class="search-bar">
+	<form #searchForm="ngForm"  (ngSubmit)="onSubmit(searchForm)">
+	<p>
+		<label for="search">search</label>
+		<input type="text" name="search" [(ngModel)]="search" placeholder="name,city,address,type,music" id="txtsearch">	
+	</p>	
+		<input type="submit" name="submit" value="Go" id="input-search">
+	</form>
+	
+</div>
+
+
+<!--<p>bar works!</p>-->
+<div class="bar-container">
+			
+	<ul *ngIf="bars">
+		 <li *ngFor="let bar of bars" class="bars">
+			<a [routerLink]="['/detail',bar._id]">				
+				<div class="bar-image">
+				<img src="{{url+'/get-image/'+bar.image }}" *ngIf="bar.image">
+				</div>
+				<h5>{{ bar.name }}</h5>				
+			</a>
+		</li> 
+
+	</ul>
+	
+	<br/>
+	
+	
+</div>
+
+
+
+

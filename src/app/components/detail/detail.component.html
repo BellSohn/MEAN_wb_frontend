@@ -1,0 +1,18 @@
+<!-- <p>detail works!</p> -->
+<div class="detail-container">
+	<div class="detail-image" *ngIf="bar.image">
+		<img src="{{url+'/get-image/'+bar.image}}"/>
+	</div>
+	<div class="detail-data">
+		<h1>{{bar.name}}</h1>
+		<span>
+			<h2>In :{{bar.city}}</h2>
+			<h2>The address : {{bar.address}}</h2>
+			<h2>What type of bar:{{bar.type}}</h2>
+			<h2>The music :{{bar.music}}</h2>
+			<hr/>
+			<p>Remarks</p>
+			<textarea disabled>{{bar.remarks}}</textarea>
+		</span>
+	</div>
+</div>
