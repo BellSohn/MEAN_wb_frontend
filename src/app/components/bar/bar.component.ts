@@ -42,8 +42,7 @@ export class BarComponent implements OnInit {
 
     		this._barService.getBars().subscribe(
 
-    			response =>{
-    				//console.log(response);
+    			response =>{    				
     				if(response.bars){
     				this.bars = response.bars;	
     				}
@@ -55,35 +54,6 @@ export class BarComponent implements OnInit {
 
     			)
     	}
-
-
-
-    /*onSubmit(form){
-
-      
-
-      var search = this.search;
-      //console.log(search);
-    
-
-      this._barService.findBars(search).subscribe(
-
-          response =>{
-            console.log(response);
-            if(response.pubs){
-              this.bars = response.bars;
-            }
-          },
-          error =>{
-            console.log(<any>error);
-          }
-
-        )
-
-    }*/
-
-
-
 
 
 
