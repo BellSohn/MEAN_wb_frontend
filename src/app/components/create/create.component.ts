@@ -19,16 +19,14 @@ export class CreateComponent implements OnInit {
   public save_bar;
   public status:string;
 	public url:string;
-	public filesToUpload:Array<File>; /*esta variable,la usamos para saber si en la request
-  hay archivos*/
+	public filesToUpload:Array<File>; /*use this variable,to check if the request comes with files*/
 
 
 
   constructor(
 
   	private _barService:BarService,
-  	private _uploadService:UploadService /*ppdad la usaremos para llamar
-     a sus metodos de carga*/
+  	private _uploadService:UploadService /*use to call to load methods*/
 
   	) {
   		this.title = "put an smile on the site";
@@ -40,17 +38,13 @@ export class CreateComponent implements OnInit {
   }
 
 
-  	onSubmit(form){
-
-      console.log(this.bar);
+  	onSubmit(form){      
 
       this._barService.saveBar(this.bar).subscribe(
 
-        response =>{
-          //console.log(response);
+        response =>{          
           if(response.bar){
-
-              //subimos la imagen
+              //upload the image
    if(this.filesToUpload){
         this._uploadService.makeFileRequest(Global.url+"/upload-image/"+response.bar._id,[],
          this.filesToUpload,'image').then((result:any)=>{
@@ -79,14 +73,13 @@ export class CreateComponent implements OnInit {
         }
 
 
-        );//fin de subscribe
+        );
 
 
   	}
 
 
-    /*en la variable event del formulario, tengo todos los datos
-    que se pasan con el formulario*/
+    /*in  form event ,I have all data comming through the form*/
   	fileChangeEvent(fileInput:any){
   		console.log(fileInput);
   		this.filesToUpload = <Array<File>>fileInput.target.files;
