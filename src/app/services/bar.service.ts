@@ -4,7 +4,7 @@ import { Observable} from 'rxjs';
 import { Bar } from '../models/bar';
 import { Global } from './global';
 
-@Injectable() /*con esto le digo que esto es un servicio que vamos a 'inyectar'*/
+@Injectable() /*this I said:this is a service we inject*/
 
 export class BarService{
 
